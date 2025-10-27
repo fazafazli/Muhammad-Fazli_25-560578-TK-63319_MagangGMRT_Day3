@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": -23.96, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": 229.4,
+      "left": -411,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": 191,
+      "left": -305.4,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo3",
+      "top": -10.6,
+      "left": -411,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo4",
+      "top": -58.6,
+      "left": -315,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo5",
+      "top": 296.6,
+      "left": -103.8,
+      "rotate": 270,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "imu1",
+      "top": -16.82,
+      "left": 146.08,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -72.8,
+      "left": -170.58,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "servo2:PWM", "esp:12", "green", [ "v9.6", "h38.6", "v-9.6", "h0", "v-172.8" ] ],
+    [ "servo2:V+", "esp:5V", "green", [ "v19.2", "h57.7", "v-153.6" ] ],
+    [ "servo2:GND", "esp:GND.1", "black", [ "v28.8", "h76.8", "v-211.2" ] ],
+    [ "servo1:PWM", "esp:13", "green", [ "v28.8", "h173", "v-240" ] ],
+    [ "servo1:V+", "esp:5V", "green", [ "v38.4", "h192.1", "v-211.2" ] ],
+    [ "servo1:GND", "esp:GND.1", "black", [ "v48", "h211.2", "v-268.8" ] ],
+    [ "servo5:PWM", "esp:26", "green", [ "v28.8", "h-105.4", "v-9.6" ] ],
+    [
+      "servo5:V+",
+      "esp:5V",
+      "green",
+      [ "v19.2", "h0.1", "v0", "h-76.8", "v-230.4", "h76.8", "v-9.6" ]
+    ],
+    [ "servo5:GND", "esp:GND.1", "black", [ "v9.6", "h0", "v0", "h-57.6", "v-297.6" ] ],
+    [ "servo4:PWM", "esp:27", "green", [ "v9.6", "h115.4", "v9.6", "h0", "v19.2" ] ],
+    [ "servo4:V+", "esp:5V", "green", [ "v9.6", "h0.1", "v9.6", "h96", "v96" ] ],
+    [ "servo4:GND", "esp:GND.1", "black", [ "v28.8", "h96", "v38.4" ] ],
+    [ "servo3:PWM", "esp:14", "green", [ "v9.6", "h77", "v0", "h0", "v-9.6" ] ],
+    [
+      "servo3:V+",
+      "esp:5V",
+      "green",
+      [ "v19.2", "h96.1", "v-9.6", "h0", "v0", "h48", "v48", "h105.6", "v0", "h9.6", "v28.8" ]
+    ],
+    [ "servo3:GND", "esp:GND.1", "black", [ "v28.8", "h86.4", "v-9.6", "h86.4" ] ],
+    [ "pir1:VCC", "esp:5V", "red", [ "v67.2", "h57.6", "v134.4", "h48" ] ],
+    [ "pir1:OUT", "esp:25", "green", [ "v57.6", "h57.46", "v28.8" ] ],
+    [ "pir1:GND", "esp:GND.1", "black", [ "v48", "h18.94", "v86.4" ] ],
+    [ "imu1:VCC", "esp:5V", "red", [ "v201.6", "h-182.48", "v-28.8" ] ],
+    [ "imu1:GND", "esp:GND.2", "black", [ "v9.6", "h-0.08", "v0", "h-76.8", "v-19.2" ] ],
+    [ "imu1:SDA", "esp:21", "green", [ "v19.2", "h-86.48", "v19.2" ] ],
+    [ "imu1:SCL", "esp:22", "green", [ "v28.8", "h-86.48", "v-9.6" ] ]
+  ],
+  "dependencies": {}
+}
