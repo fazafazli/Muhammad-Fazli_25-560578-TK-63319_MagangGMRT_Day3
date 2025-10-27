@@ -2,6 +2,8 @@
 #include <MPU6050.h>
 #include <ESP32Servo.h>
 
+// Muhammad Fazli 25/560578/TK/63319
+
 MPU6050 mpu;
 Servo servo1, servo2, servo3, servo4, servo5;
 
